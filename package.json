@@ -40,6 +40,16 @@
                 "scopeName": "text.html.ss",
                 "path": "./syntax/silverstripe.tmLanguage"
             }
+        ],
+        "snippets": [
+            {
+                "language": "SilverStripe",
+                "path": "./snippets/silverstripe-ss.json"
+            },
+            {
+                "language": "php",
+                "path" : "./snippets/silverstripe-php.json"
+            }
         ]
     }
 }
