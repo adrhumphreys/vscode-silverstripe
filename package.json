@@ -1,0 +1,45 @@
+{
+    "name": "silverstripe",
+    "displayName": "HTML (Silverstripe)",
+    "description": "Syntax highlighter for SilverStripe template files (.ss)",
+    "version": "0.0.1",
+    "publisher": "AdrHumphreys",
+    "author": "AdrHumphreys",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/adrhumphreys/vscode-silverstripe.git"
+	},
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "keywords": [
+      "php",
+      "silverstripe",
+      "html",
+      "template"  
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "SilverStripe",
+                "aliases": [
+                    "HTML(SilverStripe)",
+                    "SilverStripe"
+                ],
+                "extensions": [".ss"]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "SilverStripe",
+                "scopeName": "text.html.ss",
+                "path": "./syntax/silverstripe.tmLanguage"
+            }
+        ]
+    }
+}
