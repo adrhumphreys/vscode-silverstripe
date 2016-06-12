@@ -1,13 +1,7 @@
-# README
-## This is the README for your extension "theme-template-silverstripe"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# VSCODE - SilverStripe
+Basically this makes .ss files look good again and adds a few snippets to .ss files and .php files that I found handy.
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Snippets are taken from:
+(https://github.com/LiamW/silverstripe-atom)[LiamW's SilverStripe Atom bundle].
+Grammar taken from:
+(https://github.com/benjamin-smith/sublime-text-silverstripe/blob/master/SilverStripe.tmLanguage)[benjamin-smith's SilverStripe Sublime bundle]
