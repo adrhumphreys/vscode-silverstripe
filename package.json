@@ -1,11 +1,16 @@
 {
     "name": "silverstripe",
-    "displayName": "HTML (Silverstripe)",
+    "displayName": "SilverStripe",
     "description": "Syntax highlighter for SilverStripe template files (.ss)",
-    "version": "0.0.1",
-    "publisher": "AdrHumphreys",
-    "author": "AdrHumphreys",
+    "icon": "images/icon.png",
+    "version": "0.0.3",
+    "publisher": "adrian",
+    "author": "adrian",
     "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/adrhumphreys/vscode-silverstripe/issues",
+        "email": "adrhumphreys@gmail.com"
+    },
     "engines": {
         "vscode": "^1.0.0"
     },
