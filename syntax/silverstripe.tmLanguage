@@ -900,7 +900,7 @@
 		<key>tag_id_attribute</key>
 		<dict>
 			<key>begin</key>
-			<string>\b(id)\b\s*(=)</string>
+			<string>\b(id)\b\s(=)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
