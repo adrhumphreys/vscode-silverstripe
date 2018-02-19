@@ -36,7 +36,8 @@
                     "HTML(SilverStripe)",
                     "SilverStripe"
                 ],
-                "extensions": [".ss"]
+                "extensions": [".ss"],
+		"configuration": "./silverstripe-configuration.json"
             }
         ],
         "grammars": [
