@@ -9,7 +9,7 @@ Add below settings to enable Emmet for blade:
 
 ```json
 "emmet.includeLanguages": {
-    "SilverStripe": "html"
+    "silverstripe": "html"
 },
 "emmet.triggerExpansionOnTab": true,
 ```
