@@ -3,8 +3,8 @@
 	"displayName": "SilverStripe",
 	"description": "Syntax highlighter for SilverStripe template files (.ss)",
 	"icon": "images/icon.png",
-	"version": "0.0.4",
-	"publisher": "adrianhumphreys2",
+	"version": "0.0.5",
+	"publisher": "adrianhumphreys",
 	"author": "adrian",
 	"license": "MIT",
 	"bugs": {
