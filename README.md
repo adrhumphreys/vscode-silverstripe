@@ -1,17 +1,16 @@
 # VSCODE - SilverStripe
 Basically this makes .ss files look good again and adds a few snippets to .ss files and .php files that I found handy.
 
-## Make emmet work and not feel bad
+## Make emmet work
 
 Open `Preferences` -> `Settings`
 
-Add below settings to enable Emmet for blade:
+Add below settings to enable Emmet for .ss files:
 
 ```json
 "emmet.includeLanguages": {
-    "silverstripe": "html"
-},
-"emmet.triggerExpansionOnTab": true,
+    "SilverStripe": "html"
+}
 ```
 
 Snippets are taken from:
