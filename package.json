@@ -51,6 +51,10 @@
       }
     ]
   },
+  "galleryBanner": {
+    "color": "#005AE1",
+    "theme": "dark"
+  },
   "dependencies": {
     "silverstripe-sanchez": "0.0.1"
   },
