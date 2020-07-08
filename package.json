@@ -1,68 +1,74 @@
 {
-	"name": "silverstripe",
-	"displayName": "SilverStripe",
-	"description": "Syntax highlighter for SilverStripe template files (.ss)",
-	"icon": "images/icon.png",
-	"version": "0.0.5",
-	"publisher": "adrianhumphreys",
-	"author": "adrian",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/adrhumphreys/vscode-silverstripe/issues",
-		"email": "adrhumphreys@gmail.com"
-	},
-	"engines": {
-		"vscode": "^1.0.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/adrhumphreys/vscode-silverstripe.git"
-	},
-	"categories": [
-		"Languages",
-		"Snippets"
-	],
-	"keywords": [
-		"php",
-		"silverstripe",
-		"html",
-		"template"
-	],
-	"contributes": {
-		"languages": [
-			{
-				"id": "SilverStripe",
-				"aliases": [
-					"HTML(SilverStripe)",
-					"SilverStripe"
-				],
-				"extensions": [
-					".ss"
-				],
-				"configuration": "./silverstripe-configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "SilverStripe",
-				"scopeName": "text.html.ss",
-				"path": "./syntax/silverstripe.tmLanguage"
-			}
-		],
-		"snippets": [
-			{
-				"language": "SilverStripe",
-				"path": "./snippets/silverstripe-ss.json"
-			},
-			{
-				"language": "php",
-				"path": "./snippets/silverstripe-php.json"
-			}
-		]
-	},
-	"__metadata": {
-		"id": "3da1812a-9acc-4e12-88c0-0b1ab8cfe709",
-		"publisherId": "bfa7efa7-d32c-4e4b-8699-a6e4bd11c4e1",
-		"publisherDisplayName": "Adrian Humphreys"
-	}
+  "name": "silverstripe",
+  "displayName": "SilverStripe",
+  "description": "Syntax highlighter for SilverStripe template files (.ss)",
+  "icon": "images/icon.png",
+  "version": "0.0.5",
+  "publisher": "adrianhumphreys",
+  "author": "adrian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrhumphreys/vscode-silverstripe/issues",
+    "email": "adrhumphreys@gmail.com"
+  },
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrhumphreys/vscode-silverstripe.git"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "php",
+    "silverstripe",
+    "html",
+    "template"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "language": "silverstripe",
+        "scopeName": "text.html.ss",
+        "path": "./syntax/silverstripe.tmLanguage.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "silverstripe",
+        "aliases": [
+          "HTML SilverStripe",
+          "SilverStripe",
+          "silverstripe"
+        ],
+        "extensions": [
+          ".ss"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "silverstripe-sanchez": "0.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "lint-fix": "eslint **/*.js --fix"
+  },
+  "__metadata": {
+    "id": "3da1812a-9acc-4e12-88c0-0b1ab8cfe709",
+    "publisherId": "bfa7efa7-d32c-4e4b-8699-a6e4bd11c4e1",
+    "publisherDisplayName": "Adrian Humphreys"
+  }
 }
