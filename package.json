@@ -3,6 +3,10 @@
   "displayName": "SilverStripe",
   "description": "Syntax highlighter for SilverStripe template files (.ss)",
   "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#005AE1",
+    "theme": "dark"
+  },
   "version": "0.0.5",
   "publisher": "adrianhumphreys",
   "author": "adrian",
@@ -12,7 +16,7 @@
     "email": "adrhumphreys@gmail.com"
   },
   "engines": {
-    "vscode": "^1.0.0"
+    "vscode": "^1.46.0"
   },
   "repository": {
     "type": "git",
@@ -29,6 +33,13 @@
     "template"
   ],
   "contributes": {
+    "configurationDefaults": {
+      "[silverstripe]": {
+        "emmet.includeLanguages": {
+          "silverstripe": "html"
+        }
+      }
+    },
     "grammars": [
       {
         "language": "silverstripe",
@@ -51,12 +62,9 @@
       }
     ]
   },
-  "galleryBanner": {
-    "color": "#005AE1",
-    "theme": "dark"
-  },
   "dependencies": {
-    "silverstripe-sanchez": "0.0.1"
+    "silverstripe-sanchez": "0.0.1",
+    "standard": "^14.3.4"
   },
   "devDependencies": {
     "eslint": "^7.2.0",
