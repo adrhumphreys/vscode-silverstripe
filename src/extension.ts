@@ -16,10 +16,14 @@ export function activate(context: vscode.ExtensionContext) {
     useItems: config.get('useItems')
   };
 
+  // if null use `.silverstripe_sanchez` file config if availble either in
+  // the home directory or acitve project
   if (vsconfig.comments === 'null') {
     delete vsconfig.comments
   };
 
+  // if null use `.silverstripe_sanchez` file config if availble either in
+  // the home directory or acitve project
   if (vsconfig.useItems === 'null') {
     delete vsconfig.useItems
   };
