@@ -32,14 +32,11 @@
     "html",
     "template"
   ],
+  "main": "./out/src/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributes": {
-    "configurationDefaults": {
-      "[silverstripe]": {
-        "emmet.includeLanguages": {
-          "silverstripe": "html"
-        }
-      }
-    },
     "grammars": [
       {
         "language": "silverstripe",
@@ -53,30 +50,66 @@
         "aliases": [
           "HTML SilverStripe",
           "SilverStripe",
-          "silverstripe"
+          "silverstripe",
+          "ss"
         ],
         "extensions": [
           ".ss"
         ],
         "configuration": "./language-configuration.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "SilverStripe",
+      "properties": {
+        "SilverStripe.comments": {
+          "scope": "resource",
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "null"
+          ],
+          "enumDescriptions": [
+            "Enable",
+            "Disable",
+            "Inherit from `.silverstripe_sanchez`"
+          ],
+          "default": "null",
+          "description": "Enable/Disable if snippets should include comments."
+        },
+        "SilverStripe.useItems": {
+          "scope": "resource",
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "null"
+          ],
+          "enumDescriptions": [
+            "Enable",
+            "Disabled",
+            "Inherit from `.silverstripe_sanchez`"
+          ],
+          "default": "null",
+          "description": "Enable/Disable if snippets should attempt to inject use item namespacing automatically."
+        }
+      }
+    }
   },
   "dependencies": {
-    "silverstripe-sanchez": "0.0.1",
-    "standard": "^14.3.4"
+    "silverstripe-sanchez": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.2.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "@types/node": "^8.10.25",
+    "@types/vscode": "^1.34.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
   },
   "scripts": {
-    "lint": "eslint **/*.js",
-    "lint-fix": "eslint **/*.js --fix"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
   },
   "__metadata": {
     "id": "3da1812a-9acc-4e12-88c0-0b1ab8cfe709",
