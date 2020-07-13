@@ -16,6 +16,9 @@ export class silverstripeCompletionProvider implements vscode.CompletionItemProv
         vscode.CompletionItemKind.Snippet
       )
 
+      suggestion.filterText = snippet.conditions.prefix;
+      suggestion.sortText = snippet.conditions.prefix;
+
       suggestion.insertText = new vscode.SnippetString(
         this.sanchez.data.comments ? snippet.suggestion.comment + snippet.suggestion.body : snippet.suggestion.body
       );
