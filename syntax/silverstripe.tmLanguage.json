@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "HTML Silverstripe test",
+  "name": "HTML Silverstripe",
   "scopeName": "text.html.ss",
   "uuid": "9b9e9065-622f-479d-82f1-6c403382e932",
   "fileTypes": [
