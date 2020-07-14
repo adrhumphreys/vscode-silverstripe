@@ -1,7 +1,24 @@
-# VSCODE - SilverStripe
-Basically this makes .ss files look good again and adds a few snippets to .ss files and .php files that I found handy.
+# Silverstripe
 
-## Make emmet work
+Provides [SilverStripe](http://www.silverstripe.org/) syntax highlighting and snippets.
+
+[![Powered by Sanchez](https://raw.githubusercontent.com/gorriecoe/silverstripe-sanchez/master/resources/poweredby.png)](https://github.com/gorriecoe/silverstripe-sanchez)
+
+## Features
+
+- Reads the project composer.lock file to determine the available snippets.
+- Php snippets follow [psr-2 standards](http://www.php-fig.org/psr/psr-2/)
+- Snippets inject use item if available and possible.
+- Supports 4.\* and 3.\*.
+- Uses full word prefixes so you don't have to remember abbreviations.
+- Includes snippets for addons modules such as [tagfield](https://github.com/silverstripe/silverstripe-tagfield) and [linkable](https://github.com/sheadawson/silverstripe-linkable).
+- .ss templates include scope and conditional indentation.
+
+## Options
+
+[Add your own snippets](https://github.com/gorriecoe/silverstripe-sanchez)
+
+## Enable emmet
 
 Open `Preferences` -> `Settings`
 
@@ -9,15 +26,12 @@ Add below settings to enable Emmet for .ss files:
 
 ```json
 "emmet.includeLanguages": {
-    "SilverStripe": "html"
+    "silverstripe": "html"
 }
 ```
 
-Snippets are taken from:
-[LiamW's SilverStripe Atom bundle](https://github.com/LiamW/silverstripe-atom).
-Grammar taken from:
-[benjamin-smith's SilverStripe Sublime bundle](https://github.com/benjamin-smith/sublime-text-silverstripe/blob/master/SilverStripe.tmLanguage)
+## Contributions
+
+Go for gold, if it adds value, add it and I'll merge it.
 
 
-### Contributions
-Go for gold, if it adds value, add it and I'll merge it

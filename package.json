@@ -1,68 +1,119 @@
 {
-	"name": "silverstripe",
-	"displayName": "SilverStripe",
-	"description": "Syntax highlighter for SilverStripe template files (.ss)",
-	"icon": "images/icon.png",
-	"version": "0.0.5",
-	"publisher": "adrianhumphreys",
-	"author": "adrian",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/adrhumphreys/vscode-silverstripe/issues",
-		"email": "adrhumphreys@gmail.com"
-	},
-	"engines": {
-		"vscode": "^1.0.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/adrhumphreys/vscode-silverstripe.git"
-	},
-	"categories": [
-		"Languages",
-		"Snippets"
-	],
-	"keywords": [
-		"php",
-		"silverstripe",
-		"html",
-		"template"
-	],
-	"contributes": {
-		"languages": [
-			{
-				"id": "SilverStripe",
-				"aliases": [
-					"HTML(SilverStripe)",
-					"SilverStripe"
-				],
-				"extensions": [
-					".ss"
-				],
-				"configuration": "./silverstripe-configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "SilverStripe",
-				"scopeName": "text.html.ss",
-				"path": "./syntax/silverstripe.tmLanguage"
-			}
-		],
-		"snippets": [
-			{
-				"language": "SilverStripe",
-				"path": "./snippets/silverstripe-ss.json"
-			},
-			{
-				"language": "php",
-				"path": "./snippets/silverstripe-php.json"
-			}
-		]
-	},
-	"__metadata": {
-		"id": "3da1812a-9acc-4e12-88c0-0b1ab8cfe709",
-		"publisherId": "bfa7efa7-d32c-4e4b-8699-a6e4bd11c4e1",
-		"publisherDisplayName": "Adrian Humphreys"
-	}
+  "name": "silverstripe",
+  "displayName": "SilverStripe",
+  "description": "Syntax highlighter for SilverStripe template files (.ss)",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#005AE1",
+    "theme": "dark"
+  },
+  "version": "0.0.5",
+  "publisher": "adrianhumphreys",
+  "author": "adrian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrhumphreys/vscode-silverstripe/issues",
+    "email": "adrhumphreys@gmail.com"
+  },
+  "engines": {
+    "vscode": "^1.46.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrhumphreys/vscode-silverstripe.git"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "php",
+    "silverstripe",
+    "html",
+    "template"
+  ],
+  "main": "./out/src/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "language": "silverstripe",
+        "scopeName": "text.html.ss",
+        "path": "./syntax/silverstripe.tmLanguage.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "silverstripe",
+        "aliases": [
+          "HTML SilverStripe",
+          "SilverStripe",
+          "silverstripe",
+          "ss"
+        ],
+        "extensions": [
+          ".ss"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "configuration": {
+      "title": "SilverStripe",
+      "properties": {
+        "SilverStripe.comments": {
+          "scope": "resource",
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "null"
+          ],
+          "enumDescriptions": [
+            "Enable",
+            "Disable",
+            "Inherit from `.silverstripe_sanchez`"
+          ],
+          "default": "null",
+          "description": "Enable/Disable if snippets should include comments."
+        },
+        "SilverStripe.useItems": {
+          "scope": "resource",
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "null"
+          ],
+          "enumDescriptions": [
+            "Enable",
+            "Disabled",
+            "Inherit from `.silverstripe_sanchez`"
+          ],
+          "default": "null",
+          "description": "Enable/Disable if snippets should attempt to inject use item namespacing automatically."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "silverstripe-sanchez": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.10.25",
+    "@types/vscode": "^1.34.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "__metadata": {
+    "id": "3da1812a-9acc-4e12-88c0-0b1ab8cfe709",
+    "publisherId": "bfa7efa7-d32c-4e4b-8699-a6e4bd11c4e1",
+    "publisherDisplayName": "Adrian Humphreys"
+  }
 }

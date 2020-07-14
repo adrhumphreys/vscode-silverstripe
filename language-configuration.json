@@ -1,0 +1,48 @@
+{
+  "comments": {
+    "blockComment": [ "<%--", "--%>" ]
+  },
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["<%", "%>"],
+    ["<%--", "--%>"],
+    ["<!--", "-->"]
+  ],
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "'", "close": "'", "notIn": ["string", "comment"] },
+    { "open": "\"", "close": "\"", "notIn": ["string"] },
+    { "open": "`", "close": "`", "notIn": ["string", "comment"] },
+    { "open": "<% ", "close": " %>", "notIn": ["comment"] },
+    { "open": "<%t ", "close": " %>", "notIn": ["comment"] },
+    { "open": "<%-- ", "close": " --%>" },
+    { "open": "<!-- ", "close": " -->" }
+  ],
+  "autoCloseBefore": ";:.,=}])>` \n\t",
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["'", "'"],
+    ["\"", "\""],
+    ["`", "`"],
+    ["<%", "%>"],
+    ["<%--", "--%>"],
+    ["<!--", "-->"]
+  ],
+  "folding": {
+    "markers": {
+      "start": "<%\\s*(?:if|else|loop|with|control)|<%--",
+      "end": "<%\\s*[end|else].*\\s%>|--%>"
+    }
+  },
+  "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\-\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\?\\s]+)",
+  "indentationRules": {
+    "increaseIndentPattern": "<%\\s+(?:if|else|loop|with|control)|<%t|<(?!area|base|br|col|frame|hr|html|img|input|link|meta|param)[a-zA-Z]+|^\\/>",
+    "decreaseIndentPattern": "<%\\s+end_[a-zA-Z]+|else]|<\\/?[a-zA-Z]+(\\s\\/)?>"
+  }
+}
