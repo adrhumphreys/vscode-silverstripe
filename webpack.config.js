@@ -34,10 +34,6 @@ const config = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.coffee$/,
-      //   loader: 'coffee-loader',
-      // },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
