@@ -1,4 +1,10 @@
 .vscode/**
 .vscode-test/**
 .gitignore
-vsc-extension-quickstart.md
+node_modules
+out/
+src/
+tsconfig.json
+webpack.config.js
+!node_modules/spdx-exceptions
+!node_modules/spdx-license-ids
