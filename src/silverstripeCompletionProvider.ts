@@ -23,7 +23,9 @@ export class silverstripeCompletionProvider implements vscode.CompletionItemProv
         this.sanchez.data.comments ? snippet.suggestion.comment + snippet.suggestion.body : snippet.suggestion.body
       );
 
-      suggestion.detail = [
+      suggestion.detail = snippet.suggestion.information;
+
+      suggestion.documentation = [
         snippet.suggestion.information,
         snippet.suggestion.description,
         snippet.suggestion.url
