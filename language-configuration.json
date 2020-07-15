@@ -36,8 +36,8 @@
   ],
   "folding": {
     "markers": {
-      "start": "<%\\s*(?:if|else|loop|with|control)|<%--",
-      "end": "<%\\s*[end|else].*\\s%>|--%>"
+      "start": "<%\\s+(?:if|else|loop|with|control|cache|uncache)|<%--",
+      "end": "<%\\s+end_[a-zA-Z]+|else].*\\s%>|--%>"
     }
   },
   "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\-\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\?\\s]+)",
