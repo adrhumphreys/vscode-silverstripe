@@ -98,7 +98,7 @@
     }
   },
   "dependencies": {
-    "silverstripe-sanchez": "file:~/Projects/silverstripe/silverstripe-sanchez"
+    "silverstripe-sanchez": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^8.10.25",
