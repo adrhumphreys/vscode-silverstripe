@@ -6,5 +6,7 @@ out/
 src/
 tsconfig.json
 webpack.config.js
+!node_modules/spdx-correct
 !node_modules/spdx-exceptions
+!node_modules/spdx-expression-parse
 !node_modules/spdx-license-ids
