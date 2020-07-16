@@ -6,7 +6,17 @@ out/
 src/
 tsconfig.json
 webpack.config.js
+!node_modules/assert
+!node_modules/buffer
+!node_modules/coffeescript
+!node_modules/events
 !node_modules/spdx-correct
 !node_modules/spdx-exceptions
 !node_modules/spdx-expression-parse
 !node_modules/spdx-license-ids
+!node_modules/url
+!node_modules/util
+!node_modules/stream-browserify
+!node_modules/stream-each
+!node_modules/stream-http
+!node_modules/stream-shift
