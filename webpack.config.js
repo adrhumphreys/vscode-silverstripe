@@ -16,7 +16,8 @@ const config = {
   },
   devtool: 'source-map',
   externals: {
-    vscode: 'commonjs vscode',
+    commonjs: 'commonjs',
+    vscode: 'vscode',
     coffeescript: 'coffeescript',
     'spdx-exceptions': 'spdx-exceptions',
     'spdx-license-ids': 'spdx-license-ids',

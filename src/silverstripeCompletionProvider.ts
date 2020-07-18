@@ -9,7 +9,9 @@ export class silverstripeCompletionProvider implements vscode.CompletionItemProv
 
   public provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): Thenable<vscode.CompletionItem[]>{
     return this.sanchez.snippets({
-      language: document.languageId
+      scope: true,
+      language: document.languageId,
+      prefix: true
     }).map(snippet => {
       let suggestion = new vscode.CompletionItem(
         snippet.suggestion.name,
