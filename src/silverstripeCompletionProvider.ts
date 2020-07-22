@@ -33,24 +33,15 @@ export class silverstripeCompletionProvider implements vscode.CompletionItemProv
         snippet.suggestion.url
       ].join('\n\n');
 
-      // Get a list of locations to safely apply use items from sanchez.
-      // Then insert in the given locations.
-      suggestion.additionalTextEdits = this.sanchez.getUseItemLoc({
-        // Pass through the current editor view contents.
-        text: document.getText(),
-        // Pass the useItems set specified in the suggestion.
-        useItems: snippet.suggestion.useItems
-      }).map(useItem => {
-        return new vscode.TextEdit(
-          new vscode.Range(
-            new vscode.Position(useItem.line, 0),
-            new vscode.Position(useItem.line, 0)
-          ),
-          useItem.body
-        )
-      })
+      suggestion.command = {
+        command: 'silverstripe.injectUseItems',
+        title: 'Inject use items',
+        arguments: [
+          snippet.suggestion.useItems
+        ]
+      };
 
-      return suggestion
+      return suggestion;
     })
   };
 }

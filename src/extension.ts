@@ -47,27 +47,47 @@ export function activate(context: vscode.ExtensionContext) {
   // Output snippet count incase of future issues,
   // may remove in future if happy we don't have
   // more issues.
-  vscode.window.showInformationMessage([
-    sanchez.snippets({
-      prefix: true,
-      scope: true,
-      language: true
-    }).length,
-    'Silverstripe snippets available from a total of ',
-    sanchez.allSnippets.length,
-    'found.'
-  ].join(' '));
+  const foundSnippets = sanchez.snippets({
+    prefix: true,
+    scope: true,
+    language: true
+  }).length
+  const totalSnippets = sanchez.allSnippets.length
+
+  vscode.window.showInformationMessage(
+    `${foundSnippets} Silverstripe snippets available from a total of ${totalSnippets} found.`,
+  );
 
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(
       [
-        { scheme: "file", language: "php" },
-        { scheme: "untitled", language: "php" },
-        { scheme: "file", language: "yaml",  },
-        { scheme: "file", language: "silverstripe" }
+        { scheme: 'file', language: 'php' },
+        { scheme: 'untitled', language: 'php' },
+        { scheme: 'file', language: 'yaml',  },
+        { scheme: 'file', language: 'silverstripe' }
       ],
       new silverstripeCompletionProvider(sanchez),
       '.'
+    )
+  )
+  context.subscriptions.push(
+    vscode.commands.registerTextEditorCommand(
+      'silverstripe.injectUseItems',
+      (textEditor: vscode.TextEditor, edit: vscode.TextEditorEdit, useItems: []) => {
+        // Get a list of locations to safely apply use items from sanchez.
+        // Then insert in the given locations.
+        sanchez.getUseItemLoc({
+          // Pass through the current editor view contents.
+          text: textEditor.document.getText(),
+          // Pass the useItems set specified in the suggestion.
+          useItems: useItems
+        }).forEach(useItem => {
+          edit.insert(
+            new vscode.Position(useItem.line, 0),
+            useItem.body
+          )
+        })
+      }
     )
   )
 }
