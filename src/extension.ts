@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { silverstripeCompletionProvider } from './silverstripeCompletionProvider';
+import { silverstripeDefinitionProvider } from './silverstripeDefinitionProvider';
 
 const Enginez = require('silverstripe-sanchez');
 let sanchez = null;
@@ -88,6 +89,12 @@ export function activate(context: vscode.ExtensionContext) {
           )
         })
       }
+    )
+  )
+  context.subscriptions.push(
+    vscode.languages.registerDefinitionProvider(
+      { scheme: "file", language: "silverstripe" },
+      new silverstripeDefinitionProvider(sanchez)
     )
   )
 }
