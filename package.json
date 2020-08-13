@@ -93,12 +93,18 @@
           ],
           "default": "null",
           "description": "Enable/Disable if snippets should attempt to inject use item namespacing automatically."
+        },
+        "Silverstripe.showSnippetCount": {
+          "scope": "resource",
+          "type": "boolean",
+          "default": false,
+          "description": "Enable/Disable snippet display count on activate."
         }
       }
     }
   },
   "dependencies": {
-    "silverstripe-sanchez": "^1.0.0"
+    "silverstripe-sanchez": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^8.10.25",
