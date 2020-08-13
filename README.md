@@ -13,6 +13,8 @@ Provides [SilverStripe](http://www.silverstripe.org/) syntax highlighting and sn
 - Uses full word prefixes so you don't have to remember abbreviations.
 - Includes snippets for addons modules such as [tagfield](https://github.com/silverstripe/silverstripe-tagfield) and [linkable](https://github.com/sheadawson/silverstripe-linkable).
 - .ss templates include scope and conditional indentation.
+- .ss templates support go to definition for `<% include %>`, `<% themedCSS %>` and `<% themeJavascript %>`.
+- .ss templates autocomplete paths include, themedCSS and themeJavascript. ie. includepagination will complete to <% include SilverStripe/Blog/Pagination %> if found in the appropriate directory.
 
 ## Options
 
