@@ -25,39 +25,46 @@ export function activate(context: vscode.ExtensionContext) {
   // if null use `.silverstripe_sanchez` file config if available either in
   // the home directory or active project
   if (vsconfig.comments === 'null') {
-    delete vsconfig.comments
+    delete vsconfig.comments;
   };
 
   // if null use `.silverstripe_sanchez` file config if available either in
   // the home directory or active project
   if (vsconfig.useItems === 'null') {
-    delete vsconfig.useItems
+    delete vsconfig.useItems;
   };
 
   sanchez = new Enginez({
-    // .silverstripe_sanchez
-    configPaths: paths,
-    // composer.lock
-    composerPaths: paths,
-    // package-lock.json
-    nodePaths: paths,
+    rootPaths: paths,
     // VsCode settings override .silverstripe_sanchez
     config: vsconfig
   });
 
-  // Output snippet count incase of future issues,
-  // may remove in future if happy we don't have
-  // more issues.
-  const foundSnippets = sanchez.snippets({
-    prefix: true,
-    scope: true,
-    language: true
-  }).length
-  const totalSnippets = sanchez.allSnippets.length
+  // Read _config yaml files.
+  sanchez.readConfig();
 
-  vscode.window.showInformationMessage(
-    `${foundSnippets} Silverstripe snippets available from a total of ${totalSnippets} found.`,
-  );
+  // Index theme files.
+  sanchez.indexTheme();
+
+  // Build additional theme snippets based on themeindex.
+  // e.g. includepagination will complete to <% include SilverStripe/Blog/Pagination %>
+  sanchez.buildThemeSnippets();
+
+  if (config.get('showSnippetCount')) {
+    // Output snippet count incase of future issues,
+    // may remove in future if happy we don't have
+    // more issues.
+    const foundSnippets = sanchez.snippets({
+      prefix: true,
+      scope: true,
+      language: true
+    }).length;
+    const totalSnippets = sanchez.allSnippets.length;
+
+    vscode.window.showInformationMessage(
+      `${foundSnippets} Silverstripe snippets available from a total of ${totalSnippets} found.`
+    );
+  }
 
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(
@@ -71,6 +78,7 @@ export function activate(context: vscode.ExtensionContext) {
       '.'
     )
   )
+
   context.subscriptions.push(
     vscode.commands.registerTextEditorCommand(
       'silverstripe.injectUseItems',
@@ -91,6 +99,7 @@ export function activate(context: vscode.ExtensionContext) {
       }
     )
   )
+
   context.subscriptions.push(
     vscode.languages.registerDefinitionProvider(
       { scheme: "file", language: "silverstripe" },
